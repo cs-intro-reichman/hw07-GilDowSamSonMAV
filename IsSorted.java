@@ -1,3 +1,4 @@
+
 public class IsSorted {
 
     // Public function: called by the user
@@ -7,8 +8,20 @@ public class IsSorted {
 
     // Helper recursive function
     private static boolean isSorted(int[] a, int i) {
-        //// Replace the following statement with your code
-        return false; 
+        if (a.length == 0) {
+            return true;
+        }
+        if (a.length <= 1) {
+            return true;
+        }
+        if (i == a.length - 1) {
+            return true;
+        }
+        if (a[i] > a[i + 1]) {
+            return false;
+        }
+
+        return isSorted(a, i + 1);
     }
 
     public static void main(String[] args) {
